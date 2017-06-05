@@ -4,18 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Todo;
+
+
 class TodoController extends Controller
 {
     public function index()
     {
-       $todos = \App\Todo::all();
+       $todos = Todo::all();
 
-
-       //var_dump($todos);
-       //exit;
-       return view('todo');
-       //dd($todos);
-
-       //return 'Hello My Todo';
+       return view('todo', compact('todos') );
     }
+
+
+    public function create()
+    {
+
+    }
+
 }
