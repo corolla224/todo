@@ -13,9 +13,9 @@ class TodoController extends Controller
 
        //var_dump($todos);
        //exit;
+       return view('todo');
+       //dd($todos);
 
-       dd($todos);
-
-       return 'Hello My Todo';
+       //return 'Hello My Todo';
     }
 }
