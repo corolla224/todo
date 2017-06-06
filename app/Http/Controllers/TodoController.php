@@ -21,4 +21,15 @@ class TodoController extends Controller
       return view('todo.create');
     }
 
+    public function store()
+    {
+      dd($request);
+      Todo::create([
+              'title'=>$request->title,
+              'url'=>$request->url,
+              'description'=>$request->description
+      ]);
+      return redirect('todo');
+    }
+
 }
