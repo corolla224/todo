@@ -1,30 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
-      <h1>Rodo</h1>
-      <a href="todo/create" type="Text" class="btn btn-primary">New Rodo</a>
-      <table class="table table-bordered">
+<div class="container">
+<h1>Rodo</h1>
+<a href="rodo/create" type="Text" class="btn-sm btn-success">New Rodo</a>
+<table class="table table-bordered">
         <tr>
           <th>id</th>
           <th>Title</th>
           <th>URL</th>
           <th>Description</th>
           <th>Status</th>
-          <th>Button</th>
+          <th>button</th>
           <th>Edit</th>
-          <th>Actions</th>
         </tr>
-
-        @foreach($todos as $rodo)
+        @foreach($todos as $todo)
             <tr>
-                <td>{{ rodo->id }}</td>
-                <td>{{ rodo->title }}</td>
-                <td>{{ rodo->url }}</td>
-                <td>{{ rodo->description }}</td>
-                <td>{{ $rodo->Status}}</td>
-                <td>{{ $rodo->Button}}</td>
-                <td>{{ $rodo->Edit}}</td>
+                <td>{{ $todo->id }}</td>
+                <td>{{ $todo->title }}</td>
+                <td>{{ $todo->url }}</td>
+                <td>{{ $todo->description }}</td>
                 <td>
                   <form method="post" action="/rodo/{{ $rodo->id }}">
                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
@@ -35,9 +30,7 @@
                 </td>
               </tr>
         @endforeach
-      </table>
-      {{ $todos->links() }}
-  </div>
-
+</div>
+</table>
 
 @endsection

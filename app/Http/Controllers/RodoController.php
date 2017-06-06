@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Rodo;
 
+
 class RodoController extends Controller
 {
-    pubilc function index()
+     public function index()
     {
-      return view('rodo.index', compact('rodos') );
+      $rodo = \App\Rodo::all();
+
+      return view('rodo.index');
     }
 }

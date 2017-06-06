@@ -15,10 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/rodo', 'RodoController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/rodo', 'RodoController@index');
 
 Route::post('/todo', 'TodoController@store');
