@@ -31,3 +31,12 @@ $factory->define(App\Todo::class, function (Faker\Generator $faker) {
         'description' => $faker->sentence,
     ];
 });
+
+$factory->define(App\Rodo::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->title,
+        'url' => $faker->url,
+        'description' => $faker->sentence,
+    ];
+});
