@@ -10,15 +10,15 @@ class TodoController extends Controller
 {
     public function index()
     {
-       $todos = Todo::all();
+       $todos = Todo::paginate(10);
 
-       return view('todo', compact('todos') );
+       return view('todo.index', compact('todos') );
     }
 
 
     public function create()
     {
-
+      return view('todo.create');
     }
 
 }

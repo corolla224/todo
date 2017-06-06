@@ -26,7 +26,7 @@
               </tr>
         @endforeach
       </table>
-
+      {{ $todos->links() }}
   </div>
 
 
