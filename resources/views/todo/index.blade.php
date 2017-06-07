@@ -2,20 +2,21 @@
 
 @section('content')
   <div class="container">
-      <h1>Todo</h1>
-      <a href="todo/create" type="Text" class="btn btn-primary">New Todo</a>
-      <div class="well">
-      <br><button type="submit" class="btn btn-xs btn-danger">ปฏิทิน</button></br>
-      <input class="datepicker" type="text" name="date">
+    <br>
+      <div class="modal-footer">
+      <h1>TODO</h1>
+      <a href="todo/create" type="Text" class="btn btn-primary">create</a>
       </div>
+    </br>
       <table class="table table-bordered">
         <tr>
           <th>id</th>
           <th>Title</th>
           <th>URL</th>
           <th>Description</th>
+          <th>Date</th>
           <th>Status</th>
-          <th>Edit</th>
+          <th width="150">Edit</th>
           <th>Show</th>
         </tr>
 
@@ -25,6 +26,7 @@
                 <td>{{ $todo->title }}</td>
                 <td>{{ $todo->url }}</td>
                 <td>{{ $todo->description }}</td>
+                <td></td>
                 <td>
                   <form method="post" action="/todo/{{ $todo->id }}">
                     <a href="todo/{{ $todo->id }}/open" type="Text" class="btn btn-xs btn-default">Open</a>
@@ -46,7 +48,7 @@
                   <button type="submit" class="btn btn-xs btn-danger" id={{ $todo->id }}>Show</button>
                   </form>
                 </td>
-                
+
 
         @endforeach
       </table>
