@@ -14,7 +14,7 @@
           <th>Title</th>
           <th>URL</th>
           <th>Description</th>
-          <th>Date</th>
+          <th width="100">Date</th>
           <th>Status</th>
           <th width="150">Edit</th>
           <th>Show</th>
@@ -26,7 +26,7 @@
                 <td>{{ $todo->title }}</td>
                 <td>{{ $todo->url }}</td>
                 <td>{{ $todo->description }}</td>
-                <td></td>
+                <td>{{ $todo->dateadd }}</td>
                 <td>
                   <form method="post" action="/todo/{{ $todo->id }}">
                     <a href="todo/{{ $todo->id }}/open" type="Text" class="btn btn-xs btn-default">Open</a>

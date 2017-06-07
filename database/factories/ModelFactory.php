@@ -29,6 +29,7 @@ $factory->define(App\Todo::class, function (Faker\Generator $faker) {
         'title' => $faker->title,
         'url' => $faker->url,
         'description' => $faker->sentence,
+        'dateadd' => $faker->date
     ];
 });
 
