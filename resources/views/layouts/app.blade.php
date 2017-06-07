@@ -12,7 +12,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <script> src="main.js"</script>
+    <script> src="js/bootstrp-datapicker.js"</script>
+    <script>
+        $ (function(){
+            $('.datepicker').datepicker();
+        });
+    </script>
+    </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">

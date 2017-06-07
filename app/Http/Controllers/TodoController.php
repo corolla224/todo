@@ -57,4 +57,11 @@ class TodoController extends Controller
         return redirect('todo');
     }
 
+    public function notification()
+    {
+        $todo = Todo::find($id);
+
+        return view('todo.show');
+    }
+
 }
