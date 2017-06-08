@@ -18,6 +18,10 @@
             <label for="description">Description</label>
             <input type="text" class="form-control" name="description" id="description" placeholder="description">
         </div>
+        <div class="form-group">
+            <label for="dateadd">Date</label>
+            <input  type="text" class="form-control" name="dateadd" id="datepicker"placeholder="dateadd">
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 

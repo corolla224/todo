@@ -27,8 +27,10 @@ class TodoController extends Controller
       Todo::create([
               'title'=>$request->title,
               'url'=>$request->url,
-              'description'=>$request->description
-      ]);
+              'description'=>$request->description,
+              'dateadd'=>$request->date
+
+    ]);
 
       return redirect('todo');
     }
@@ -57,7 +59,7 @@ class TodoController extends Controller
         return redirect('todo');
     }
 
-    public function notification()
+    public function show()
     {
         $todo = Todo::find($id);
 
