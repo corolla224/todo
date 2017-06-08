@@ -27,5 +27,5 @@ Route::group(['middleware'=>['auth']], function() {
   Route::post('/todo/{todo}', 'TodoController@update');
   Route::get('/todo/create', 'TodoController@create');
   Route::delete('/todo/{todo}', 'TodoController@destroy');
-  Route::post('/todo/show', 'TodoController@show');
+  
 });

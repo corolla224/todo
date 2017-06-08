@@ -3,7 +3,6 @@
 @section('content')
   <div class="container">
       <h1>My Create</h1>
-
       <form method="post" action="/todo">
         {{ csrf_field() }}
         <div class="form-group">

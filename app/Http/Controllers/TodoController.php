@@ -28,7 +28,7 @@ class TodoController extends Controller
               'title'=>$request->title,
               'url'=>$request->url,
               'description'=>$request->description,
-              'dateadd'=>$request->date
+              'dateadd'=>$request->dateadd
 
     ]);
 
