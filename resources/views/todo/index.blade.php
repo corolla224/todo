@@ -2,14 +2,15 @@
 
 @section('content')
   <div class="container">
-      <tr>
+      <br>
       <div class="modal-footer">
       <h1>TODO</h1>
-      <a href="todo/create" type="Text" class="btn btn-primary">create</a>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Launch demo modal
+      <!--<a href="todo/create" type="Text" class="btn btn-primary">create</a>-->
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+        Create
       </button>
-    </tr>
+      </div>
+      <br/>
       <table class="table table-bordered">
         <tr>
           <th>id</th>
@@ -18,7 +19,7 @@
           <th>Description</th>
           <th width="100">Date</th>
           <th>Status</th>
-          <th width="150">Edit</th>
+          <th width="105">Edit</th>
           <th>Show</th>
         </tr>
 
@@ -43,12 +44,7 @@
                 </form>
                 </td>
                 <td>
-                  <form method="post" action="/todo/{{ $todo->id }}">
-
-
-
-                  <button type="submit" class="btn btn-xs btn-danger" id={{ $todo->id }}>Show</button>
-                  </form>
+                <button type="button" class="btn-xs btn-warning" data-toggle="modal" data-target=".bs-example-modal-lg">Show</button>
                 </td>
         @endforeach
       </table>
@@ -58,7 +54,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Create</h4>
       </div>
       <div class="modal-body">
         <tr>
@@ -85,8 +81,31 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <table class="table table-bordered">
+
+        <tr>
+          <th>id</th>
+          <th>Title</th>
+          <th>URL</th>
+          <th>Description</th>
+          <th width="100">Date</th>
+        </tr>
+        <tr @foreach($todos as $todo)>
+          <td>{{ $todo->id }}</td>
+          <td>{{ $todo->title }}</td>
+          <td>{{ $todo->url }}</td>
+          <td>{{ $todo->description }}</td>
+          <td>{{ $todo->dateadd }}</td>
+        </tr>
+        @endforeach
+      </table>
     </div>
   </div>
 </div>
